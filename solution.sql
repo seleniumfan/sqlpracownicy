@@ -1,4 +1,4 @@
-#CREATE DATABASE company_employees;
+CREATE DATABASE company_employees;
 USE company_employees;
 
 # 1. Tworzy tabelę pracownik(imie, nazwisko, wyplata, data urodzenia, stanowisko). W tabeli mogą być dodatkowe kolumny, które uznasz za niezbędne.
@@ -41,7 +41,7 @@ WHERE title = 'Helpdesk';
 
 # 7. Pobiera najmłodszego pracowników (uwzględnij przypadek, że może być kilku urodzonych tego samego dnia)
 SELECT * FROM employee
-WHERE birthDate = (SELECT MIN(birthDate) FROM employee);
+WHERE birthDate = (SELECT MAX(birthDate) FROM employee);
 
 # 8. Usuwa tabelę pracownik
 DROP TABLE employee;
